@@ -17,6 +17,6 @@ CREATE TABLE transactions (
   amount REAL,
   description VARCHAR(255),
   transaction_date DATE,
-  merchant_id INT8 REFERENCES merchants(id),
-  tag_id INT8 REFERENCES tags(id)
+  merchant_id INT8 REFERENCES merchants(id) ON DELETE CASCADE,
+  tag_id INT8 REFERENCES tags(id) ON DELETE CASCADE
 );

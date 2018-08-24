@@ -38,6 +38,6 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
-  binding.pry
-  nil
+  # binding.pry
+  # nil
 end
