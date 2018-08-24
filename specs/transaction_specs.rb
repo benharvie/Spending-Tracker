@@ -14,4 +14,8 @@ class TestTransaction < MiniTest::Test
   def test_transaction_has_amount
     assert_equal(50.00, @transaction1.amount)
   end
+
+  def test_transaction_has_date
+    assert_equal('24/08/2018', @transaction1.date)
+  end
 end
