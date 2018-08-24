@@ -4,7 +4,7 @@ require_relative '../models/tag.rb'
 
 class TagTest < MiniTest::Test
   def setup
-    @shopping_tag = Tag.new("Shopping")
+    @shopping_tag = Tag.new({ "category" => "Shopping" })
   end
 
   def test_tag_has_category
