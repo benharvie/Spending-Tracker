@@ -49,7 +49,7 @@ class Merchant
           WHERE id = $1"
     values = [id]
     found = SqlRunner.run(sql, values)
-    found.map
+    found.map { |merchant| Merchant.new(merchant) }
   end
 
   def self.find_by_name(name)
