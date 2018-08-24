@@ -44,6 +44,22 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM merchants
+          WHERE id = $1"
+    values = [id]
+    found = SqlRunner.run(sql, values)
+    found.map
+  end
+
+  def self.find_by_name(name)
+    sql = "SELECT * FROM merchants
+          WHERE name = $1"
+    values = [name]
+    found = SqlRunner.run(sql, values)
+    found.map { |merchant| Merchant.new(merchant) }
+  end
+
   binding.pry
   nil
 end
