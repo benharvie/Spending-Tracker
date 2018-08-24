@@ -10,4 +10,8 @@ class TestMerchant < MiniTest::Test
   def test_merchant_has_name
     assert_equal("Amazon", @merchant1.name)
   end
+
+  def test_merchant_all_count
+    assert_equal(5, Merchant.all.count)
+  end
 end
