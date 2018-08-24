@@ -1,3 +1,6 @@
+require 'pry-byebug'
+require '../db/sql_runner.rb'
+
 class Merchant
   attr_accessor :name
   def initialize(options)
@@ -6,12 +9,15 @@ class Merchant
   end
 
   def save
-    sql = "INSERT INTO benjies_bucks
-          name
+    sql = "INSERT INTO merchants
+          (name)
           VALUES
-          $1
-          RETURNING *"
+          ($1)
+          RETURNING id"
     values = [@name]
-    SqlRunner.run(sql, values)
+    @id = SqlRunner.run(sql, values).first['id'].to_i
   end
+
+  binding.pry
+  nil
 end
