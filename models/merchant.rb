@@ -60,6 +60,6 @@ class Merchant
     found.map { |merchant| Merchant.new(merchant) }
   end
 
-  binding.pry
-  nil
+  # binding.pry
+  # nil
 end
