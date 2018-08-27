@@ -1,8 +1,9 @@
 <h1>Transactions List</h1>
-<button href>Create a New Transaction</button>
+<form action="/transactions/new">
+  <button>Create a New Transaction</button>
+</form>
 <ul>
-  <% @transaction_list.each { |transaction| %>
-    <!-- DISPLAY DATE NOT WORKING, transaction1.date shows date, .all does not?? -->
-  <li> <%= "#{transaction.date}<br>#{transaction.description} - £#{transaction.amount}" %> | <a href="/transactions/<%=transaction.id%>/edit">Edit</a> | <a href="/">Delete</a></li>
-  <% } %>
+  <%@transaction_list.each { |transaction|%>
+    <li> <%= "#{transaction.date}<br>#{transaction.description} - £#{transaction.amount}" %> | <a href="/transactions/<%=transaction.id%>/edit">Edit</a> | <a href="/">Delete</a></li>
+  <%}%>
 </ul>
