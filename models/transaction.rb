@@ -1,11 +1,14 @@
 require '../db/sql_runner.rb'
 
 class Transaction
-  attr_accessor :description, :amount, :date, :id
+  attr_accessor :id, :description, :amount, :date, :merchant_id, :tag_id
   def initialize(options)
+    @id = options['id'].to_i if options['id']
     @description = options['description']
     @amount = options['amount']
     @date = options['date']
+    @merchant_id = options['merchant_id']
+    @tag_id = options['tag_id']
   end
 
   def save
@@ -55,7 +58,7 @@ class Transaction
     found.map { |transactions| Transaction.new(transactions) }
   end
 
-  def self.find_by_date(date)
+  def self.find_by_date(date) # Needed?
     sql = "SELECT * FROM transactions
     WHERE transaction_date = $1"
     values = [date]
