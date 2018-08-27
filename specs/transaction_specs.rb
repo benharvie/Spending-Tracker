@@ -4,7 +4,9 @@ require_relative '../models/transaction.rb'
 
 class TestTransaction < MiniTest::Test
   def setup
-    @transaction1 = Transaction.new('description' => 'Bought some shoes', 'amount' => 50.00, 'date' => '24/08/2018')
+    @transaction1 = Transaction.new({ 'description' => 'Bought some shoes',
+                                      'amount' => 50.00,
+                                      'date' => '2018-08-01')
   end
 
   def test_transaction_has_description
@@ -16,6 +18,6 @@ class TestTransaction < MiniTest::Test
   end
 
   def test_transaction_has_date
-    assert_equal('24/08/2018', @transaction1.date)
+    assert_equal('2018-08-01', @transaction1.date)
   end
 end
