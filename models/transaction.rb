@@ -37,6 +37,20 @@ class Transaction
     SqlRunner.run(sql, values)
   end
 
+  def merchant
+    sql = "SELECT name FROM merchants
+          WHERE id = $1"
+    values = [@merchant_id]
+    SqlRunner.run(sql, values).first['name']
+  end
+
+  def tag
+    sql = "SELECT category FROM tags
+          WHERE id = $1"
+    values = [@tag_id]
+    SqlRunner.run(sql, values).first['category']
+  end
+
   ### CLASS METHODS
 
   def self.delete_all
