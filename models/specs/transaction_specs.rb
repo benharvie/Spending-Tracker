@@ -1,12 +1,12 @@
 require 'minitest/autorun'
 require 'minitest/rg'
-require_relative '../models/transaction.rb'
+require_relative '../transaction.rb'
 
 class TestTransaction < MiniTest::Test
   def setup
     @transaction1 = Transaction.new({ 'description' => 'Bought some shoes',
                                       'amount' => 50.00,
-                                      'date' => '2018-08-01')
+                                      'date' => '2018-08-01' })
   end
 
   def test_transaction_has_description

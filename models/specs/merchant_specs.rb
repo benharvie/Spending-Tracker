@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/rg'
-require_relative '../models/merchant.rb'
+require_relative '../merchant.rb'
 
 class TestMerchant < MiniTest::Test
   def setup

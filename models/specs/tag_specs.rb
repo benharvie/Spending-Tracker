@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/rg'
-require_relative '../models/tag.rb'
+require_relative '../tag.rb'
 
 class TagTest < MiniTest::Test
   def setup
