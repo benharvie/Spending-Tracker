@@ -26,5 +26,18 @@ class Transaction
     values = [@description, @amount, @date, @id]
     SqlRunner.run(sql, values)
   end
-  
+
+  def delete
+    sql = "DELETE FROM transactions
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  ### CLASS METHODS
+
+  def self.delete_all
+    sql = "DELETE FROM transactions"
+    SqlRunner.run(sql)
+  end
 end
