@@ -2,7 +2,7 @@ require 'pry-byebug'
 require '../db/sql_runner.rb'
 
 class Merchant
-  attr_accessor :name
+  attr_accessor :name, :id
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
@@ -45,7 +45,7 @@ class Merchant
     result = SqlRunner.run(sql)
     result.map { |merchant| Merchant.new(merchant) }
   end
-  
+
   def self.find_by_id(id)
     sql = "SELECT * FROM merchants
     WHERE id = $1"
@@ -61,7 +61,4 @@ class Merchant
     found = SqlRunner.run(sql, values)
     found.map { |merchant| Merchant.new(merchant) }
   end
-
-  # binding.pry
-  # nil
 end

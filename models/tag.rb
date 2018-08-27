@@ -1,7 +1,7 @@
 require '../db/sql_runner.rb'
 
 class Tag
-  attr_accessor :category
+  attr_accessor :category, :id
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @category = options['category']
