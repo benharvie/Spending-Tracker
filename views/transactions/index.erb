@@ -1,0 +1,7 @@
+<h1>Transactions List</h1>
+
+<ul>
+  <% @transaction_list.each { |transaction| %>
+  <li> <%= "#{transaction.date}<br>#{transaction.description} - £#{transaction.amount}" %></li>
+  <% } %>
+</ul>
