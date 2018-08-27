@@ -13,20 +13,20 @@ class Transaction
 
   def save
     sql = "INSERT INTO transactions
-    (description, amount, transaction_date)
+    (description, amount, transaction_date, merchant_id, tag_id)
     VALUES
-    ($1, $2, $3)
+    ($1, $2, $3, $4, $5)
     RETURNING id"
-    values = [@description, @amount, @date]
+    values = [@description, @amount, @date, @merchant_id, @tag_id]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
   def update
     sql = "UPDATE transactions
           SET (description, amount, transaction_date)
-          = ($1, $2, $3)
-          WHERE id = $4"
-    values = [@description, @amount, @date, @id]
+          = ($1, $2, $3, $4, $5)
+          WHERE id = $6"
+    values = [@description, @amount, @date, @merchant_id, @tag_id, @id]
     SqlRunner.run(sql, values)
   end
 
