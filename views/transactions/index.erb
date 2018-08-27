@@ -4,6 +4,6 @@
 </form>
 <ul>
   <%@transaction_list.each { |transaction|%>
-    <li> <%= "#{transaction.date}<br>#{transaction.description} - £#{transaction.amount}" %> | <a href="/transactions/<%=transaction.id%>/edit">Edit</a> | <a href="/">Delete</a></li>
+    <li> <%= "#{transaction.transaction_date}<br>#{transaction.description} - £#{transaction.amount}" %> | <a href="/transactions/<%=transaction.id%>/edit">Edit</a> | <a href="/">Delete</a></li>
   <%}%>
 </ul>

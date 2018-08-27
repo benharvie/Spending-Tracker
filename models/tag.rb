@@ -44,4 +44,11 @@ class Tag
     result = SqlRunner.run(sql)
     result.map { |tag| Tag.new(tag) }
   end
+
+  def self.find_id_by_category(category)
+    sql = "SELECT * FROM tags
+    WHERE category = $1"
+    values = [category]
+    found = SqlRunner.run(sql, values).first['id'].to_i
+  end
 end

@@ -1,1 +1,29 @@
 <h1>New Transaction</h1>
+<form method="post" action="/transactions" method="post">
+  <label for="description">Description</label>
+  <input type="text" name="description">
+
+  <label for="amount">Amount</label>
+  <input type="text" name="amount">
+
+  <label for="transaction_date">Date</label>
+  <input type="text" name="transaction_date">
+
+  <label>
+    <select name="merchant">
+      <% Merchant.all.each { |merchant| %>
+      <option value="<%= merchant.id %>"><%=merchant.name%></option>
+      <%}%>
+    </select>
+  </label>
+
+  <label>
+    <select name="tag">
+      <% Tag.all.each { |tag| %>
+      <option value="<%= tag.id %>"><%=tag.category%></option>
+      <%}%>
+    </select>
+  </label>
+
+  <input type='submit' value="Update"/>
+</form>

@@ -6,7 +6,7 @@ class Transaction
     @id = options['id'].to_i if options['id']
     @description = options['description']
     @amount = options['amount']
-    @date = options['transaction_date']
+    @transaction_date = options['transaction_date']
     @merchant_id = options['merchant_id']
     @tag_id = options['tag_id']
   end
@@ -17,7 +17,7 @@ class Transaction
     VALUES
     ($1, $2, $3, $4, $5)
     RETURNING id"
-    values = [@description, @amount, @date, @merchant_id, @tag_id]
+    values = [@description, @amount, @transaction_date, @merchant_id, @tag_id]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
@@ -26,7 +26,7 @@ class Transaction
           SET (description, amount, transaction_date)
           = ($1, $2, $3, $4, $5)
           WHERE id = $6"
-    values = [@description, @amount, @date, @merchant_id, @tag_id, @id]
+    values = [@description, @amount, @transaction_date, @merchant_id, @tag_id, @id]
     SqlRunner.run(sql, values)
   end
 
