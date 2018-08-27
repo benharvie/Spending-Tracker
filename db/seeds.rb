@@ -45,7 +45,8 @@ tag5.save
 p 'The DB has been populated with Tags'
 
 ###TRANSACTION
-#Transaction.delete_all
+Transaction.delete_all
+p 'DB has been cleared of Transactions'
 
 transaction1 =  Transaction.new({
   'description' => 'Peppers panini',
@@ -91,6 +92,8 @@ transaction5 =  Transaction.new({
   'tag_id' => tag5.id
 })
 transaction5.save
+
+p 'The DB has been populated with Transactions'
 
 binding.pry
 nil
