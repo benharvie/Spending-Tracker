@@ -34,6 +34,14 @@ get '/transactions/:id/edit' do
   erb :"transactions/edit"
 end
 
+#UPDATE TRANSACTION
+post '/transactions/:id' do
+  p params
+  transaction = Transaction.new(params)
+  transaction.update
+  redirect to '/transactions'
+end
+
 #DELETE TRANSACTION
 get '/transactions/:id/delete' do
   Transaction.find_by_id(params[:id]).first.delete

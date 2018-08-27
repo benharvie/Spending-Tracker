@@ -23,7 +23,7 @@ class Transaction
 
   def update
     sql = "UPDATE transactions
-    SET (description, amount, transaction_date)
+    SET (description, amount, transaction_date, merchant_id, tag_id)
     = ($1, $2, $3, $4, $5)
     WHERE id = $6"
     values = [@description, @amount, @transaction_date, @merchant_id, @tag_id, @id]
@@ -57,13 +57,6 @@ class Transaction
     sql = "DELETE FROM transactions"
     SqlRunner.run(sql)
   end
-  #
-  # def self.delete_by_id(id) #Not needed
-  #   sql = "DELETE FROM transactions
-  #   WHERE id = $1"
-  #   values = [id]
-  #   SqlRunner.run(sql, values)
-  # end
 
   def self.all
     sql = "SELECT * FROM transactions"

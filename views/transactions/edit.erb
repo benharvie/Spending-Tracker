@@ -14,7 +14,7 @@
   <input type="text" name="transaction_date" value="<%= @transaction.transaction_date %>">
 
   <label>
-    <select name="merchant" value="<%= @transaction.merchant %>">
+    <select name="merchant_id" value="<%= @transaction.merchant %>">
       <% Merchant.all.each { |merchant| %>
       <option value="<%= merchant.id %>"><%=merchant.name%></option>
       <%}%>
@@ -22,7 +22,7 @@
   </label>
 
   <label>
-    <select name="tag" value="<%= @transaction.tag %>">
+    <select name="tag_id" value="<%= @transaction.tag %>">
       <% Tag.all.each { |tag| %>
       <option value="<%= tag.id %>"><%=tag.category%></option>
       <%}%>
