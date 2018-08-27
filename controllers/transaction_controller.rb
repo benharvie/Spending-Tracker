@@ -33,3 +33,9 @@ get '/transactions/:id/edit' do
   @transaction_list = Transaction.all
   erb :"transactions/edit"
 end
+
+#DELETE TRANSACTION
+get '/transactions/:id/delete' do
+  Transaction.find_by_id(params[:id]).first.delete
+  redirect to '/transactions'
+end
