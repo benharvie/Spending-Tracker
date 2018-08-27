@@ -1,4 +1,4 @@
-require '../../db/sql_runner.rb'
+require '../db/sql_runner.rb'
 
 class Tag
   attr_accessor :category, :id

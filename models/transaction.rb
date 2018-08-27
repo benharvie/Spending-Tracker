@@ -1,4 +1,4 @@
-require '../../db/sql_runner.rb'
+require '../db/sql_runner.rb'
 
 class Transaction
   attr_accessor :id, :description, :amount, :date, :merchant_id, :tag_id

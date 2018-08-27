@@ -1,5 +1,5 @@
 require 'pry-byebug'
-require '../../db/sql_runner.rb'
+require '../db/sql_runner.rb'
 
 class Merchant
   attr_accessor :name, :id
