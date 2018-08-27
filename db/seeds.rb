@@ -2,10 +2,12 @@ require_relative '../models/merchant.rb'
 require_relative '../models/tag.rb'
 require_relative '../models/transaction.rb'
 
-### MERCHANT
+### CLEAR DB
+Transaction.delete_all
 Merchant.delete_all
-p 'DB has been cleared of Merchants'
+Tag.delete_all
 
+### MERCHANT
 merchant1 = Merchant.new({ 'name' => 'Peppers' })
 merchant1.save
 
@@ -21,12 +23,7 @@ merchant4.save
 merchant5 = Merchant.new({ 'name' => 'Scottish Power' })
 merchant5.save
 
-p 'The DB has been populated with Merchants'
-
 ###TAG
-Tag.delete_all
-p 'DB has been cleared of Tags'
-
 tag1 = Tag.new({ 'category' => 'Shopping' })
 tag1.save
 
@@ -42,12 +39,7 @@ tag4.save
 tag5 = Tag.new({ 'category' => 'Bill' })
 tag5.save
 
-p 'The DB has been populated with Tags'
-
 ###TRANSACTION
-Transaction.delete_all
-p 'DB has been cleared of Transactions'
-
 transaction1 =  Transaction.new({
   'description' => 'Peppers panini',
   'amount' => 8.00,
@@ -92,8 +84,6 @@ transaction5 =  Transaction.new({
   'tag_id' => tag5.id
 })
 transaction5.save
-
-p 'The DB has been populated with Transactions'
 
 binding.pry
 nil
