@@ -40,4 +40,26 @@ class Transaction
     sql = "DELETE FROM transactions"
     SqlRunner.run(sql)
   end
+
+  def self.all
+    sql = "SELECT * FROM transactions"
+    result = SqlRunner.run(sql)
+    result.map { |transactions| Transaction.new(transactions) }
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM transactions
+    WHERE id = $1"
+    values = [id]
+    found = SqlRunner.run(sql, values)
+    found.map { |transactions| Transaction.new(transactions) }
+  end
+
+  def self.find_by_date(date)
+    sql = "SELECT * FROM transactions
+    WHERE transaction_date = $1"
+    values = [date]
+    found = SqlRunner.run(sql, values)
+    found.map { |transactions| Transaction.new(transactions) }
+  end
 end
