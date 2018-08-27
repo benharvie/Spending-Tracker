@@ -8,3 +8,7 @@ also_reload './models/*'
 get '/' do
   erb :index
 end
+
+get 'transactions/:id/edit' do
+  erb :edit
+end

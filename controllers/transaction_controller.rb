@@ -14,3 +14,8 @@ end
 get '/transactions/new' do
   erb :"transactions/new"
 end
+
+
+get '/transactions/:id/edit' do
+  erb :"transactions/edit"
+end
