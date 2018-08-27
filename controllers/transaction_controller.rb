@@ -30,7 +30,7 @@ end
 
 #EDIT TRANSACTION
 get '/transactions/:id/edit' do
-  @transaction_list = Transaction.all
+  @transaction = Transaction.find_by_id(params[:id]).first
   erb :"transactions/edit"
 end
 
