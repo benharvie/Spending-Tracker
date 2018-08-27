@@ -24,7 +24,28 @@ merchant5.save
 p 'The DB has been populated with Merchants'
 
 ###TAG
-#Tag.delete_all
+Tag.delete_all
+p 'DB has been cleared of Tags'
+
+tag1 = Tag.new({ 'category' => 'Shopping' })
+tag1.save
+
+tag2 = Tag.new({ 'category' => 'Entertainment' })
+tag2.save
+
+tag3 = Tag.new({ 'category' => 'Food' })
+tag3.save
+
+tag4 = Tag.new({ 'category' => 'Travel' })
+tag4.save
+
+tag5 = Tag.new({ 'category' => 'Expense' })
+tag5.save
+
+p 'The DB has been populated with Tags'
 
 ###TRANSACTION
 #Transaction.delete_all
+
+binding.pry
+nil
