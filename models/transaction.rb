@@ -1,12 +1,12 @@
 require_relative '../db/sql_runner.rb'
 
 class Transaction
-  attr_accessor :id, :description, :amount, :date, :merchant_id, :tag_id
+  attr_accessor :id, :description, :amount, :transaction_date, :merchant_id, :tag_id
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @description = options['description']
     @amount = options['amount']
-    @date = options['date']
+    @date = options['transaction_date']
     @merchant_id = options['merchant_id']
     @tag_id = options['tag_id']
   end
@@ -47,7 +47,7 @@ class Transaction
   def self.all
     sql = "SELECT * FROM transactions"
     result = SqlRunner.run(sql)
-    result.map { |transactions| Transaction.new(transactions) }
+    result.map { |transaction| Transaction.new(transaction) }
   end
 
   def self.find_by_id(id)
@@ -55,7 +55,7 @@ class Transaction
     WHERE id = $1"
     values = [id]
     found = SqlRunner.run(sql, values)
-    found.map { |transactions| Transaction.new(transactions) }
+    found.map { |transaction| Transaction.new(transaction) }
   end
 
   def self.find_by_date(date) # Needed?
@@ -63,6 +63,6 @@ class Transaction
     WHERE transaction_date = $1"
     values = [date]
     found = SqlRunner.run(sql, values)
-    found.map { |transactions| Transaction.new(transactions) }
+    found.map { |transaction| Transaction.new(transaction) }
   end
 end

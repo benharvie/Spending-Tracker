@@ -43,7 +43,7 @@ tag5.save
 transaction1 =  Transaction.new({
   'description' => 'Peppers panini',
   'amount' => 8.00,
-  'date' => '2018-08-01',
+  'transaction_date' => '2018-08-01',
   'merchant_id' => merchant1.id,
   'tag_id' => tag3.id
 })
@@ -52,7 +52,7 @@ transaction1.save
 transaction2 =  Transaction.new({
   'description' => 'New shoes',
   'amount' => 49.99,
-  'date' => '2018-08-17',
+  'transaction_date' => '2018-08-17',
   'merchant_id' => merchant1.id,
   'tag_id' => tag3.id
 })
@@ -61,7 +61,7 @@ transaction2.save
 transaction3 =  Transaction.new({
   'description' => 'Train ticket',
   'amount' => 4.89,
-  'date' => '2018-08-19',
+  'transaction_date' => '2018-08-19',
   'merchant_id' => merchant1.id,
   'tag_id' => tag4.id
 })
@@ -70,7 +70,7 @@ transaction3.save
 transaction4 =  Transaction.new({
   'description' => 'Had a pint',
   'amount' => 3.50,
-  'date' => '2018-08-24',
+  'transaction_date' => '2018-08-24',
   'merchant_id' => merchant4.id,
   'tag_id' => tag2.id
 })
@@ -79,7 +79,7 @@ transaction4.save
 transaction5 =  Transaction.new({
   'description' => 'Electricity and gas',
   'amount' => 56.00,
-  'date' => '2018-08-27',
+  'transaction_date' => '2018-08-27',
   'merchant_id' => merchant5.id,
   'tag_id' => tag5.id
 })
