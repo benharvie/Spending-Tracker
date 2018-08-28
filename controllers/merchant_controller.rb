@@ -39,6 +39,7 @@ end
 
 #DELETE MERCHANT - NEEDS REFACTORED, DELETES ENTIRE TRANSACTION
 get '/merchants/:id/delete' do
+  Transaction.null_merchants(params[:id])
   Merchant.find_by_id(params[:id]).first.delete
   redirect to '/merchants'
 end

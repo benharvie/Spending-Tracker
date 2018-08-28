@@ -11,8 +11,7 @@
   <input type="text" name="amount" value="<%= @transaction.amount %>">
 
   <label for="transaction_date">Date</label>
-  <input type="text" name="transaction_date" value="<%= @transaction.transaction_date %>">
-
+  <input type="date" name="transaction_date" value="<%= @transaction.transaction_date %>">
 <!--  AUTO SELECT NEEDS FIXED IN BOTH MERCHANT + TAG -->
   <label>
     <select name="merchant_id">

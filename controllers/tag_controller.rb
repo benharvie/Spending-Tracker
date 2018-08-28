@@ -39,6 +39,7 @@ end
 
 #DELETE TAG - NEEDS REFACTORED, DELETES ENTIRE TRANSACTION
 get '/tags/:id/delete' do
+  Transaction.null_tags(params[:id])
   Tag.find_by_id(params[:id]).first.delete
   redirect to '/tags'
 end
