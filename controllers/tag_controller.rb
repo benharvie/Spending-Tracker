@@ -24,8 +24,21 @@ post '/tags' do
   redirect to '/tags'
 end
 
+#EDIT TAG
+get '/tags/:id/edit' do
+  @tag = Tag.find_by_id(params[:id]).first
+  erb :"tags/edit"
+end
+
+#UPDATE TAG
+post '/tags/:id' do
+  tag = Tag.new(params)
+  tag.update
+  redirect to '/tags'
+end
+
 #DELETE TAG - NEEDS REFACTORED, DELETES ENTIRE TRANSACTION
 get '/tags/:id/delete' do
-  # Tag.find_by_id(params[:id]).first.delete
-  # redirect to '/tags'
+  Tag.find_by_id(params[:id]).first.delete
+  redirect to '/tags'
 end
