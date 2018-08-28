@@ -27,9 +27,20 @@ class Tag
 
   def delete
     sql = "DELETE FROM tags
-    WHERE id = $1"
+          WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def total_spent
+    sql = "SELECT SUM(amount) FROM transactions
+          WHERE tag_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first['sum']
+    # if result = nil
+    #   result = 0
+    # end
+    # return result
   end
 
 ### CLASS METHODS

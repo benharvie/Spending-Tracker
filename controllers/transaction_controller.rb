@@ -7,6 +7,14 @@ require_relative '../models/tag'
 also_reload '../models/*'
 
 #SUMMARY
+get '/' do
+  @transaction_list = Transaction.all
+  @tag_list = Tag.all
+  @merchant_list = Merchant.all
+  erb :index
+end
+
+#INDEX
 get '/transactions' do
   @transaction_list = Transaction.all
   erb :"transactions/index"

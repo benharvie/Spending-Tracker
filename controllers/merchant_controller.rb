@@ -6,7 +6,7 @@ require_relative '../models/merchant'
 require_relative '../models/tag'
 also_reload '../models/*'
 
-#SUMMARY
+#INDEX
 get '/merchants' do
   @merchant_list = Merchant.all
   erb :"merchants/index"
@@ -37,7 +37,7 @@ post '/merchants/:id' do
   redirect to "/merchants"
 end
 
-#DELETE MERCHANT - NEEDS REFACTORED, DELETES ENTIRE TRANSACTION
+#DELETE MERCHANT
 get '/merchants/:id/delete' do
   Transaction.null_merchants(params[:id])
   Merchant.find_by_id(params[:id]).first.delete

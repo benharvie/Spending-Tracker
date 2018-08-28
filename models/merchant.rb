@@ -33,6 +33,13 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
+  def total_spent
+    sql = "SELECT SUM(amount) FROM transactions
+          WHERE merchant_id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values).first['sum']
+  end
+
   ### CLASS METHODS
 
   def self.delete_all

@@ -6,7 +6,7 @@ require_relative '../models/merchant'
 require_relative '../models/tag'
 also_reload '../models/*'
 
-#SUMMARY
+#INDEX
 get '/tags' do
   @tag_list = Tag.all
   erb :"tags/index"
@@ -37,7 +37,7 @@ post '/tags/:id' do
   redirect to '/tags'
 end
 
-#DELETE TAG - NEEDS REFACTORED, DELETES ENTIRE TRANSACTION
+#DELETE TAG
 get '/tags/:id/delete' do
   Transaction.null_tags(params[:id])
   Tag.find_by_id(params[:id]).first.delete

@@ -1,1 +1,21 @@
-<h1>Welcome to Benny's Buck$</h1>
+<h1>Summary</h1>
+
+<h2>Total Spent by <b>Tag</b>:</h2>
+<div class="summary-list">
+  <ul>
+    <%@tag_list.each { |tag|%>
+      <li><%= "<b>#{tag.category}:</b> £#{tag.total_spent}" %></li>
+    <%}%>
+    <hr>
+  </ul>
+
+<h2>Total Spent by <b>Merchant</b>:</h2>
+  <ul>
+    <%@merchant_list.each { |merchant|%>
+      <li><%= "<b>#{merchant.name}:</b> £#{merchant.total_spent}" %></li>
+    <%}%>
+    <hr>
+  </ul>
+
+  <div class="total">Total Transactions Amount: £<%= Transaction.total %></div>
+</div>
