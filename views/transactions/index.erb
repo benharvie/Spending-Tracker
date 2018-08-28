@@ -7,4 +7,6 @@
     <li> <%= "<b>Date:</b> #{transaction.transaction_date}<br><b>Description:</b> #{transaction.description}<br><b>Amount:</b> £#{transaction.amount}<br><b>Merchant:</b> #{transaction.merchant}<br><b>Tag:</b> #{transaction.tag}" %><br><a href="/transactions/<%=transaction.id%>/edit">Edit</a> | <a href="/transactions/<%=transaction.id%>/delete">Delete</a></li>
     <hr>
   <%}%>
+  <div class="total">Total Transactions Amount: £<%= Transaction.total %></div>
+  <hr>
 </ul>

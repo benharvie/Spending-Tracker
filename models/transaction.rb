@@ -82,7 +82,7 @@ class Transaction
 
   def self.null_merchants(id)
     sql = "UPDATE transactions
-          SET merchant_id = DEFAULT
+          SET merchant_id = NULL
           WHERE merchant_id = $1"
     values = [id]
     SqlRunner.run(sql, values)
@@ -90,9 +90,14 @@ class Transaction
 
   def self.null_tags(id)
     sql = "UPDATE transactions
-          SET tag_id = DEFAULT
+          SET tag_id = NULL
           WHERE tag_id = $1"
     values = [id]
     SqlRunner.run(sql, values)
+  end
+
+  def self.total
+    sql = "SELECT SUM(amount) FROM transactions"
+    SqlRunner.run(sql).first['sum']
   end
 end
