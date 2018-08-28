@@ -37,7 +37,7 @@ class Merchant
     sql = "SELECT SUM(amount) FROM transactions
           WHERE merchant_id = $1"
     values = [@id]
-    SqlRunner.run(sql, values).first['sum']
+    SqlRunner.run(sql, values).first['sum'].to_f
   end
 
   ### CLASS METHODS

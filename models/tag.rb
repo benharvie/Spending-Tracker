@@ -36,11 +36,7 @@ class Tag
     sql = "SELECT SUM(amount) FROM transactions
           WHERE tag_id = $1"
     values = [@id]
-    result = SqlRunner.run(sql, values).first['sum']
-    # if result = nil
-    #   result = 0
-    # end
-    # return result
+    SqlRunner.run(sql, values).first['sum'].to_f
   end
 
 ### CLASS METHODS
