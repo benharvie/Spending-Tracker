@@ -1,0 +1,10 @@
+<h1>Tags List</h1>
+<form action="/tags/new">
+  <button>Create a New Tag</button>
+</form>
+<ul>
+  <%@tag_list.each { |tag|%>
+    <li> <%= "#{tag.category}" %></li>
+    <hr>
+  <%}%>
+</ul>
