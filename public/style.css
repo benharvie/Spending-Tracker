@@ -1,0 +1,62 @@
+/*
+#2c363f - BG color / grey
+#ef2d56 - pink / red
+#ed7d3a - orange
+#8cd867 - light green
+#2fbf71 - dark green
+*/
+
+body, html {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #2C363F;
+}
+
+header {
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+  color: #8cd867;
+}
+
+footer {
+  color: #2fbf71;
+}
+
+button {
+  background-color: #8cd867;
+  border: 2px solid #2fbf71;
+  color: #2c363f;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #8cd867;
+}
+
+.transaction-list a {
+  color: #ef2d56;
+}
+
+nav a {
+  color: #8cd867;
+}
+
+h1 {
+  color: #8cd867;
+}
+
+li {
+  color: #2fbf71;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px dashed #8cd867;
+  background: #999;
+}
