@@ -13,18 +13,23 @@
   <label for="transaction_date">Date</label>
   <input type="text" name="transaction_date" value="<%= @transaction.transaction_date %>">
 
+<!--  AUTO SELECT NEEDS FIXED IN BOTH MERCHANT + TAG -->
   <label>
-    <select name="merchant_id" value="<%= @transaction.merchant %>">
+    <select name="merchant_id">
+      <option value="">
       <% Merchant.all.each { |merchant| %>
-      <option value="<%= merchant.id %>"><%=merchant.name%></option>
+      <option value="<%= merchant.id %>"
+        <!-- <%= "selected" if merchant.id == @transaction.merchant_id %>><%=merchant.name%></option> -->
       <%}%>
     </select>
   </label>
 
   <label>
-    <select name="tag_id" value="<%= @transaction.tag %>">
+    <select name="tag_id">
+      <option value="">
       <% Tag.all.each { |tag| %>
-      <option value="<%= tag.id %>"><%=tag.category%></option>
+      <option value="<%= tag.id %>"
+        <!-- <%= "selected" if tag.id == @transaction.tag_id %>><%=tag.category%></option> -->
       <%}%>
     </select>
   </label>

@@ -36,7 +36,6 @@ end
 
 #UPDATE TRANSACTION
 post '/transactions/:id' do
-  p params
   transaction = Transaction.new(params)
   transaction.update
   redirect to '/transactions'
