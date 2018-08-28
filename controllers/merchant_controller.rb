@@ -36,3 +36,9 @@ post '/merchants/:id' do
   new_merchant.update
   redirect to "/merchants"
 end
+
+#DELETE MERCHANT - NEEDS REFACTORED, DELETES ENTIRE TRANSACTION
+get '/merchants/:id/delete' do
+  Merchant.find_by_id(params[:id]).first.delete
+  redirect to '/merchants'
+end
