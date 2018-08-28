@@ -1,0 +1,10 @@
+<h1>Merchant List</h1>
+<form action="/merchants/new">
+  <button>Create a New Merchant</button>
+</form>
+<ul>
+  <%@merchant_list.each { |merchant|%>
+    <li> <%= merchant.name %><br><a href="/merchants/<%=merchant.id%>/edit">Edit</a> | <a href="/merchants/<%=merchant.id%>/delete">Delete</a></li>
+    <hr>
+  <%}%>
+</ul>

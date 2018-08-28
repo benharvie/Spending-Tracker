@@ -32,8 +32,8 @@ end
 
 #UPDATE TAG
 post '/tags/:id' do
-  tag = Tag.new(params)
-  tag.update
+  new_tag = Tag.new(params)
+  new_tag.update
   redirect to '/tags'
 end
 
