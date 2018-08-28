@@ -59,7 +59,8 @@ class Transaction
   end
 
   def self.all
-    sql = "SELECT * FROM transactions"
+    sql = "SELECT * FROM transactions
+          ORDER BY transaction_date ASC;"
     result = SqlRunner.run(sql)
     result.map { |transaction| Transaction.new(transaction) }
   end
