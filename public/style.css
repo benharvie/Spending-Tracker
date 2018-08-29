@@ -9,6 +9,10 @@
 body, html {
   font-family: 'Roboto Mono', monospace;
   background-color: #2C363F;
+  /* MAKE IT RAIN */
+  /* background-image: url("http://www.mytinyphone.com/uploads/users/reddnrowl/508211.gif");
+  background-repeat: no-repeat;
+  background-size:cover;  */
 }
 
 header {
@@ -109,4 +113,9 @@ hr {
   padding: 3px;
   margin: 1px;
   color: #2c363f;
+}
+
+.edit-input {
+  margin-left: 2em;
+  color: #8cd867;
 }

@@ -1,7 +1,9 @@
 <h1>Edit Tag</h1>
 <form action="/tags/<%= @tag.id %>" method="post">
-  <label for="category">Category</label>
-  <input type="text" name="category" value="<%= @tag.category %>">
+  <div class="edit-input">
+    <label for="category">Category</label>
+    <input type="text" name="category" value="<%= @tag.category %>">
 
-  <input type='submit' value="Update"/>
+    <input type='submit' value="Update"/>
+  </div>
 </form>
