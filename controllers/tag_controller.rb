@@ -33,6 +33,7 @@ end
 #VIEW TRANSACTIONS BY TAG
 get '/tags/:id/view' do
   @transaction_list = Transaction.find_by_tag(params[:id])
+  redirect to '/tags' if @transaction_list == []
   erb :"tags/view"
 end
 

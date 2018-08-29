@@ -4,7 +4,7 @@
   <ul>
     <%@tag_list.each { |tag|%>
       <li>
-        <%= "<b>#{tag.category}:</b> £#{tag.total_spent}" %>
+        <%= "<b>#{tag.category}:</b> £#{sprintf "%.2f", tag.total_spent}" %>
         <div style="width:<%="#{(tag.total_spent / Transaction.total * 2000).round}"%>px;">
           <%="#{(tag.total_spent / Transaction.total * 100).round(2)}%"%>
         </div>
@@ -19,7 +19,7 @@
     <div class="chart">
     <%@merchant_list.each { |merchant|%>
       <li>
-        <%= "<b>#{merchant.name}:</b> £#{merchant.total_spent}" %>
+        <%= "<b>#{merchant.name}:</b> £#{sprintf "%.2f", merchant.total_spent}" %>
         <div style="width:<%="#{(merchant.total_spent / Transaction.total * 2000).round}"%>px;">
         <%="#{(merchant.total_spent / Transaction.total * 100).round(2)}%"%>
         </div>
@@ -28,5 +28,5 @@
   </div>
   </ul>
   <hr>
-  <div class="total">Total Transactions Amount: £<%= Transaction.total %></div>
+  <div class="total">Total Transactions Amount: £<%= sprintf "%.2f", Transaction.total %></div>
 </div>

@@ -9,7 +9,7 @@
   <input type="text" name="description" value="<%= @transaction.description %>">
 
   <label for="amount">Amount £</label>
-  <input type="text" name="amount" value="<%= @transaction.amount %>">
+  <input type="text" name="amount" value="<%= sprintf "%.2f", @transaction.amount %>">
 
   <label for="transaction_date">Date</label>
   <input type="date" name="transaction_date" value="<%= @transaction.transaction_date %>">
