@@ -30,6 +30,12 @@ get '/tags/:id/edit' do
   erb :"tags/edit"
 end
 
+#VIEW TRANSACTIONS BY TAG
+get '/tags/:id/view' do
+  @transaction_list = Transaction.find_by_tag(params[:id])
+  erb :"tags/view"
+end
+
 #UPDATE TAG
 post '/tags/:id' do
   new_tag = Tag.new(params)
