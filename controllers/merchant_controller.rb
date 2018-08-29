@@ -24,6 +24,12 @@ post '/merchants' do
   redirect to '/merchants'
 end
 
+#VIEW TRANSACTIONS BY MERCHANT
+get '/merchants/:id/view' do
+  @transaction_list = Transaction.find_by_merchant(params[:id])
+  erb :"merchants/view"
+end
+
 #EDIT MERCHANT
 get '/merchants/:id/edit' do
   @merchant = Merchant.find_by_id(params[:id]).first

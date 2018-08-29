@@ -73,6 +73,22 @@ class Transaction
     found.map { |transaction| Transaction.new(transaction) }
   end
 
+  def self.find_by_merchant(id)
+    sql = "SELECT * FROM transactions
+          WHERE merchant_id = $1"
+    values = [id]
+    found = SqlRunner.run(sql, values)
+    found.map { |transaction| Transaction.new(transaction) }
+  end
+
+  def self.find_by_tag(id)
+    sql = "SELECT * FROM transactions
+          WHERE tag_id = $1"
+    values = [id]
+    found = SqlRunner.run(sql, values)
+    found.map { |transaction| Transaction.new(transaction) }
+  end
+
   def self.find_by_date(date) # Needed?
     sql = "SELECT * FROM transactions
           WHERE transaction_date = $1"
