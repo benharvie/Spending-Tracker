@@ -1,5 +1,6 @@
 <h1>Edit Transaction</h1>
 
+<div class="edit-input">
 <li> <%= "<b>Date:</b> #{@transaction.transaction_date}<br><b>Description:</b> #{@transaction.description}<br><b>Amount:</b> £#{@transaction.amount}<br><b>Merchant:</b> #{@transaction.merchant}<br><b>Tag:</b> #{@transaction.tag}" %>
 <br>
 <br>
@@ -39,3 +40,4 @@
 
   <input type='submit' value="Update"/>
 </form>
+</div>
