@@ -54,7 +54,7 @@ transaction2 =  Transaction.new({
   'amount' => 49.99,
   'transaction_date' => '2018-08-17',
   'merchant_id' => merchant3.id,
-  'tag_id' => tag3.id
+  'tag_id' => tag1.id
 })
 transaction2.save
 
@@ -84,6 +84,51 @@ transaction5 =  Transaction.new({
   'tag_id' => tag5.id
 })
 transaction5.save
+
+transaction6 =  Transaction.new({
+  'description' => 'New shirt',
+  'amount' => 16.00,
+  'transaction_date' => '2018-06-27',
+  'merchant_id' => merchant3.id,
+  'tag_id' => tag1.id
+})
+transaction6.save
+
+transaction7 =  Transaction.new({
+  'description' => 'Tablet',
+  'amount' => 40.00,
+  'transaction_date' => '2018-08-07',
+  'merchant_id' => merchant3.id,
+  'tag_id' => tag1.id
+})
+transaction7.save
+
+transaction8 =  Transaction.new({
+  'description' => 'Breakfast Burrito',
+  'amount' => 4.00,
+  'transaction_date' => '2018-08-28',
+  'merchant_id' => merchant1.id,
+  'tag_id' => tag3.id
+})
+transaction8.save
+
+transaction9 =  Transaction.new({
+  'description' => 'Another Breakfast Burrito',
+  'amount' => 4.00,
+  'transaction_date' => '2018-08-29',
+  'merchant_id' => merchant1.id,
+  'tag_id' => tag3.id
+})
+transaction9.save
+
+transaction10 =  Transaction.new({
+  'description' => 'AND ANOTHER BREAKFAST BURRITO',
+  'amount' => 4.00,
+  'transaction_date' => '2018-08-27',
+  'merchant_id' => merchant1.id,
+  'tag_id' => tag3.id
+})
+transaction10.save
 
 binding.pry
 nil
