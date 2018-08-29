@@ -6,7 +6,7 @@ class TestTransaction < MiniTest::Test
   def setup
     @transaction1 = Transaction.new({ 'description' => 'Bought some shoes',
                                       'amount' => 50.00,
-                                      'date' => '2018-08-01' })
+                                      'transaction_date' => '2018-08-01' })
   end
 
   def test_transaction_has_description
@@ -18,6 +18,6 @@ class TestTransaction < MiniTest::Test
   end
 
   def test_transaction_has_date
-    assert_equal('2018-08-01', @transaction1.date)
+    assert_equal('2018-08-01', @transaction1.transaction_date)
   end
 end
