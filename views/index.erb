@@ -1,4 +1,4 @@
-<h2>Total Spent by <b>Tag</b>:</h2>
+<h2><b>Tag</b> Spendings</h2>
 <div class="summary-list">
   <div class="chart">
   <ul>
@@ -6,19 +6,17 @@
       <li><%= "<b>#{tag.category}:</b> £#{tag.total_spent}" %><div style="width:<%="#{(tag.total_spent / Transaction.total * 2000).round}"%>px;"><%="#{(tag.total_spent / Transaction.total * 100).round(2)}%"%></div></li>
     <%}%>
     </div>
-    <hr>
   </ul>
+  <hr>
 
-
-<h2>Total Spent by <b>Merchant</b>:</h2>
+<h2><b>Merchant</b> Spendings</h2>
   <ul>
     <div class="chart">
     <%@merchant_list.each { |merchant|%>
       <li><%= "<b>#{merchant.name}:</b> £#{merchant.total_spent}" %><div style="width:<%="#{(merchant.total_spent / Transaction.total * 2000).round}"%>px;"><%="#{(merchant.total_spent / Transaction.total * 100).round(2)}%"%></div></li>
     <%}%>
   </div>
-    <hr>
   </ul>
-
+  <hr>
   <div class="total">Total Transactions Amount: £<%= Transaction.total %></div>
 </div>

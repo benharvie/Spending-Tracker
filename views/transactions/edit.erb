@@ -7,28 +7,32 @@
   <label for="description">Description</label>
   <input type="text" name="description" value="<%= @transaction.description %>">
 
-  <label for="amount">Amount</label>
+  <label for="amount">Amount £</label>
   <input type="text" name="amount" value="<%= @transaction.amount %>">
 
   <label for="transaction_date">Date</label>
   <input type="date" name="transaction_date" value="<%= @transaction.transaction_date %>">
-<!--  AUTO SELECT NEEDS FIXED IN BOTH MERCHANT + TAG -->
+
   <label>
     <select name="merchant_id">
-      <option value="">
       <% Merchant.all.each { |merchant| %>
       <option value="<%= merchant.id %>"
-        <!-- <%= "selected" if merchant.id == @transaction.merchant_id %>><%=merchant.name%></option> -->
+        <%= "selected" if @transaction.merchant_id == merchant.id %>
+        >
+        <%=merchant.name%>
+      </option>
       <%}%>
     </select>
   </label>
 
   <label>
     <select name="tag_id">
-      <option value="">
       <% Tag.all.each { |tag| %>
       <option value="<%= tag.id %>"
-        <!-- <%= "selected" if tag.id == @transaction.tag_id %>><%=tag.category%></option> -->
+        <%= "selected" if @transaction.tag_id == tag.id %>
+        >
+        <%=tag.category%>
+      </option>
       <%}%>
     </select>
   </label>

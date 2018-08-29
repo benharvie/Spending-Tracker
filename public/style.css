@@ -40,16 +40,17 @@ button {
 
 .total {
   font-weight: bold;
+  font-style:italic;
   font-size: 1.5em;
-  color: #8cd867;
-}
-
-a {
   color: #ef2d56;
 }
 
+a {
+  color: #ed7d3a;
+}
+
 nav a {
-  /* color: #8cd867; */
+  color: #ef2d56;
   display: inline-block;
   padding: 1em;
 }
@@ -69,7 +70,12 @@ nav li {
 
 h1 {
   margin-left: 1.5em;
-  color: #8cd867;
+  color: #ef2d56;
+}
+
+h2 {
+  margin-left: 1.5em;
+  color: #ef2d56;
 }
 
 li {
@@ -85,7 +91,7 @@ hr {
 
 .chart div {
   font: 10px sans-serif;
-  background-color: #8cd867;
+  background-color: #8cd867 ;
   text-align: right;
   padding: 3px;
   margin: 1px;
