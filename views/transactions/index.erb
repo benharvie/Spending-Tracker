@@ -5,7 +5,19 @@
 <div class="transaction-list">
   <ul>
     <%@transaction_list.each { |transaction|%>
-      <li> <%= "<b>Date:</b> <i>#{transaction.transaction_date}</i><br><b>Description:</b> <i>#{transaction.description}</i><br><b>Amount:</b> <i>£#{transaction.amount}</i><br><b>Merchant:</b> <i>#{transaction.merchant}</i><br><b>Tag:</b> <i>#{transaction.tag}</i>" %><br><a href="/transactions/<%=transaction.id%>/edit">Edit</a> | <a href="/transactions/<%=transaction.id%>/delete">Delete</a></li>
+      <li>
+        <%= "<b>Date:</b> <i>#{transaction.transaction_date}</i>
+        <br>
+        <b>Description:</b> <i>#{transaction.description}</i>
+        <br>
+        <b>Amount:</b> <i>£#{transaction.amount}</i>
+        <br><b>Merchant:</b> <i>#{transaction.merchant}</i>
+        <br>
+        <b>Tag:</b> <i>#{transaction.tag}</i>" %>
+        <br>
+        <a href="/transactions/<%=transaction.id%>/edit">Edit</a> |
+        <a href="/transactions/<%=transaction.id%>/delete">Delete</a>
+      </li>
       <hr>
     <%}%>
     <div class="total">Total Transactions Amount: £<%= Transaction.total %></div>

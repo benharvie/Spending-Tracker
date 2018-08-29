@@ -4,7 +4,13 @@
 </form>
 <ul>
   <%@tag_list.each { |tag|%>
-    <li> <%= "#{tag.category}" %><br><a href="/tags/<%=tag.id%>/edit">Edit</a> | <a href="/tags/<%=tag.id%>/delete">Delete</a></li>
+    <li>
+      <%= "#{tag.category}" %>
+      <br>
+      <a href="/tags/<%=tag.id%>/view">View Transactions</a> |
+      <a href="/tags/<%=tag.id%>/edit">Edit</a> |
+      <a href="/tags/<%=tag.id%>/delete">Delete</a>
+    </li>
     <hr>
   <%}%>
 </ul>

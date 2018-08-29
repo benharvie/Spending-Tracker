@@ -4,7 +4,12 @@
 </form>
 <ul>
   <%@merchant_list.each { |merchant|%>
-    <li> <%= merchant.name %><br><a href="/merchants/<%=merchant.id%>/edit">Edit</a> | <a href="/merchants/<%=merchant.id%>/delete">Delete</a></li>
+    <li> <%= merchant.name %>
+      <br>
+      <a href="/merchants/<%=merchant.id%>/view">View Transactions</a> |
+      <a href="/merchants/<%=merchant.id%>/edit">Edit</a> |
+      <a href="/merchants/<%=merchant.id%>/delete">Delete</a>
+    </li>
     <hr>
   <%}%>
 </ul>

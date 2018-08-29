@@ -3,7 +3,12 @@
   <div class="chart">
   <ul>
     <%@tag_list.each { |tag|%>
-      <li><%= "<b>#{tag.category}:</b> £#{tag.total_spent}" %><div style="width:<%="#{(tag.total_spent / Transaction.total * 2000).round}"%>px;"><%="#{(tag.total_spent / Transaction.total * 100).round(2)}%"%></div></li>
+      <li>
+        <%= "<b>#{tag.category}:</b> £#{tag.total_spent}" %>
+        <div style="width:<%="#{(tag.total_spent / Transaction.total * 2000).round}"%>px;">
+          <%="#{(tag.total_spent / Transaction.total * 100).round(2)}%"%>
+        </div>
+      </li>
     <%}%>
     </div>
   </ul>
@@ -13,7 +18,12 @@
   <ul>
     <div class="chart">
     <%@merchant_list.each { |merchant|%>
-      <li><%= "<b>#{merchant.name}:</b> £#{merchant.total_spent}" %><div style="width:<%="#{(merchant.total_spent / Transaction.total * 2000).round}"%>px;"><%="#{(merchant.total_spent / Transaction.total * 100).round(2)}%"%></div></li>
+      <li>
+        <%= "<b>#{merchant.name}:</b> £#{merchant.total_spent}" %>
+        <div style="width:<%="#{(merchant.total_spent / Transaction.total * 2000).round}"%>px;">
+        <%="#{(merchant.total_spent / Transaction.total * 100).round(2)}%"%>
+        </div>
+      </li>
     <%}%>
   </div>
   </ul>
