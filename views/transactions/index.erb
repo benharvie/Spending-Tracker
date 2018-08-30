@@ -1,11 +1,13 @@
 <h1>Transactions List</h1>
 <form action="/transactions/new">
-  <button>Create a New Transaction</button>
+  <button class="btn-transaction">Create a New Transaction</button>
 </form>
 <form action="/transactions/filter">
-  <input class="start-date" type="date" name="start_date">
-  <input class="end-date" type="date" name="end_date">
-  <button>Filter by Date</button>
+  <button class="btn-filter">Filter by Date</button>
+  <div class="date-filter">
+    <input class="text-input" type="date" name="start_date">
+    <input class="text-input" type="date" name="end_date">
+  </div>
 </form>
 
 <div class="transaction-list">

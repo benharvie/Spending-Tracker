@@ -6,16 +6,16 @@
 <br>
 <form method="post" action="/transactions/<%= @transaction.id %>" method="post">
   <label for="description">Description</label>
-  <input type="text" name="description" value="<%= @transaction.description %>">
+  <input type="text" class="text-input" name="description" value="<%= @transaction.description %>">
 
   <label for="amount">Amount £</label>
-  <input type="text" name="amount" value="<%= sprintf "%.2f", @transaction.amount %>">
+  <input type="text" class="text-input" name="amount" value="<%= sprintf "%.2f", @transaction.amount %>">
 
   <label for="transaction_date">Date</label>
-  <input type="date" name="transaction_date" value="<%= @transaction.transaction_date %>">
+  <input type="date" class="text-input" name="transaction_date" value="<%= @transaction.transaction_date %>">
 
   <label>
-    <select name="merchant_id">
+    <select class="text-input" name="merchant_id">
       <% Merchant.all.each { |merchant| %>
       <option value="<%= merchant.id %>"
         <%= "selected" if @transaction.merchant_id == merchant.id %>
@@ -27,7 +27,7 @@
   </label>
 
   <label>
-    <select name="tag_id">
+    <select class="text-input" name="tag_id">
       <% Tag.all.each { |tag| %>
       <option value="<%= tag.id %>"
         <%= "selected" if @transaction.tag_id == tag.id %>
@@ -37,7 +37,8 @@
       <%}%>
     </select>
   </label>
-
-  <input type='submit' value="Update"/>
+  <br>
+  <br>
+  <input class="text-input" type='submit' value="Update"/>
 </form>
 </div>

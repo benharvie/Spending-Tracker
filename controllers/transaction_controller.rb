@@ -26,11 +26,6 @@ get '/transactions/filter' do
   @end_date = params[:end_date]
   @transaction_list = Transaction.date_between(@start_date, @end_date)
   erb :"transactions/filter"
-  # if @transaction_list != nil
-  #   erb :"transactions/filter"
-  # else
-  #   redirect to '/transactions'
-  # end
 end
 
 #NEW TRANSACTION

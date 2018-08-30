@@ -2,8 +2,9 @@
 <form action="/merchants/<%= @merchant.id %>" method="post">
   <div class="edit-input">
     <label for="name">Name</label>
-    <input type="text" name="name" value="<%= @merchant.name %>">
-
-    <input type='submit' value="Update"/>
+    <input type="text" class="text-input" name="name" value="<%= @merchant.name %>">
+    <br>
+    <br>
+    <input type='submit' class="text-input" value="Update"/>
   </div>
 </form>

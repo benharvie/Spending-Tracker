@@ -2,8 +2,9 @@
 <form action="/tags/<%= @tag.id %>" method="post">
   <div class="edit-input">
     <label for="category">Category</label>
-    <input type="text" name="category" value="<%= @tag.category %>">
-
-    <input type='submit' value="Update"/>
+    <input type="text" class="text-input" name="category" value="<%= @tag.category %>">
+    <br>
+    <br>
+    <input type='submit' class="text-input" value="Update"/>
   </div>
 </form>

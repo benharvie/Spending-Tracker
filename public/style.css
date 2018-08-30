@@ -38,6 +38,23 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.input-form {
+  margin-left: 2.5em;
+  color: #8cd867;
+}
+
+.btn-create {
+  margin-left: 2.5em;
+}
+
+.btn-filter {
+  margin-right: 1em;
+  float: right;
+}
+
+.btn-transaction {
   margin-right: 2.5em;
   float: right;
 }
@@ -49,12 +66,17 @@ button {
   color: #ef2d56;
 }
 
-.start-date {
-
+.date-filter {
+  float:right;
+  padding-right: 2.5em;
+  margin-top: 0.5em;
+  clear: both;
 }
 
-.end-date {
-
+.text-input {
+  background-color: #8cd867;
+  color: #2c363f;
+  border: 2px solid #2fbf71;
 }
 
 a {
