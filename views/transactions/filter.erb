@@ -1,10 +1,10 @@
-<h1>Transactions List</h1>
+<h1>Transactions <%= "#{@start_date} to #{@end_date}" %></h1>
 <form action="/transactions/new">
   <button>Create a New Transaction</button>
 </form>
-<form action="/transactions/filter">
-  <input class="start-date" type="date" name="start_date">
-  <input class="end-date" type="date" name="end_date">
+<form action="/transactions/new">
+  <input class="start-date" type="date" name="transaction_date" value="">
+  <input class="end-date" type="date" name="transaction_date" value="">
   <button>Filter by Date</button>
 </form>
 
@@ -26,7 +26,5 @@
       </li>
       <hr>
     <%}%>
-    <div class="total">Total Transactions Amount: £<%= sprintf "%.2f", Transaction.total %></div>
-    <hr>
   </ul>
 </div>

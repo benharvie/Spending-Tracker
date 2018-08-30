@@ -60,7 +60,7 @@ class Transaction
 
   def self.all
     sql = "SELECT * FROM transactions
-          ORDER BY transaction_date ASC;"
+          ORDER BY transaction_date ASC"
     result = SqlRunner.run(sql)
     result.map { |transaction| Transaction.new(transaction) }
   end
@@ -116,5 +116,16 @@ class Transaction
   def self.total
     sql = "SELECT SUM(amount) FROM transactions"
     SqlRunner.run(sql).first['sum'].to_f
+  end
+
+  def self.date_between(start_date, end_date)
+    sql = "SELECT * FROM transactions
+          WHERE transaction_date
+          BETWEEN
+          $1 AND $2
+          ORDER BY transaction_date ASC"
+    values = [start_date, end_date]
+    result = SqlRunner.run(sql, values)
+    result.map { |transaction| Transaction.new(transaction) }
   end
 end

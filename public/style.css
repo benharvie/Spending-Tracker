@@ -49,6 +49,14 @@ button {
   color: #ef2d56;
 }
 
+.start-date {
+
+}
+
+.end-date {
+
+}
+
 a {
   color: #ed7d3a;
 }
@@ -109,8 +117,8 @@ hr {
 .chart div {
   font: 10px sans-serif;
   background-color: #8cd867 ;
-  text-align: right;
-  padding: 3px;
+  text-align: left;
+  padding: 5px;
   margin: 1px;
   color: #2c363f;
 }

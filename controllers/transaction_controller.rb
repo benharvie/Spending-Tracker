@@ -20,6 +20,19 @@ get '/transactions' do
   erb :"transactions/index"
 end
 
+#FILTER TRANSACTION
+get '/transactions/filter' do
+  @start_date = params[:start_date]
+  @end_date = params[:end_date]
+  @transaction_list = Transaction.date_between(@start_date, @end_date)
+  erb :"transactions/filter"
+  # if @transaction_list != nil
+  #   erb :"transactions/filter"
+  # else
+  #   redirect to '/transactions'
+  # end
+end
+
 #NEW TRANSACTION
 get '/transactions/new' do
   erb :"transactions/new"
