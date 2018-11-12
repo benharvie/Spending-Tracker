@@ -1,6 +1,6 @@
-## Benjie's Bucks - Spending Tracker
+## Benny's Bucks - Spending Tracker
 
-![Benjie's Bucks Spending Tracker](https://i.imgur.com/FSq4GRF.png)
+![Benny's Bucks Spending Tracker](https://i.imgur.com/FSq4GRF.png)
 
 # Technologies Used
 * Ruby
